@@ -21,4 +21,15 @@ public class Employee {
     String token;
     boolean status;
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                ", date=" + date +
+                ", token='" + token + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }
