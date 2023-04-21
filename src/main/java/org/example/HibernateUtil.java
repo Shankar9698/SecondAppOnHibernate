@@ -21,9 +21,13 @@ public class HibernateUtil {
             properties.put(Environment.URL, "jdbc:mysql://localhost:3306/my_db");
             properties.put(Environment.USER, "root");
             properties.put(Environment.PASS, "root");
-            properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
+            properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
             properties.put(Environment.HBM2DDL_AUTO, "update");
+            properties.put(Environment.SHOW_SQL,"true");
+            properties.put(Environment.FORMAT_SQL,"true");
+
             cfg.setProperties(properties); //
+            cfg.addAnnotatedClass(Student.class);
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
             sessionFactory = cfg.buildSessionFactory(serviceRegistry);
         }
