@@ -28,6 +28,7 @@ public class HibernateUtil {
 
             cfg.setProperties(properties); //
             cfg.addAnnotatedClass(Student.class);
+            cfg.addAnnotatedClass(Employee.class);
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
             sessionFactory = cfg.buildSessionFactory(serviceRegistry);
         }
